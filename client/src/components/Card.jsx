@@ -5,7 +5,7 @@ import { downloadImage } from '../utils'
 
 const Card = ({ _id, name, prompt, photo }) => {
   return (
-    <div className='rounded-xl group relative shadow-card hover:shadow-cardhover card'>
+    <div className='rounded-xl group relative shadow-card hover:shadow-cardhover card hover:scale-105 transition-transform'>
       <img className='w-full h-auto object-cover rounded-xl' src={photo} alt={prompt} />
 
       <div className="group-hover:flex flex-col max-h-[94.5%] hidden absolute bottom-0 left-0 right-0 bg-[#10131f] m-2 p-4 rounded-md">
@@ -17,7 +17,7 @@ const Card = ({ _id, name, prompt, photo }) => {
             </div>
             <p className='text-white text-sm'>{name}</p>
           </div>
-          <button type='button' onClick={() => downloadImage(_id, photo)} className='outline-none bg-transparent border-none'><img src={download} alt='download' className='w-6 h-6 object-contain invert' /></button>
+          <button type='button' onClick={() => downloadImage(_id, photo)} className='animate-bounce outline-none bg-transparent border-none'><img src={download} alt='download' className='w-6 h-6 object-contain invert' /></button>
         </div>
         {/* <button type='button' onClick={() => downloadImage(_id, photo)} className='outline-none bg-transparent border-none'><img src={download} alt='download' className='w-6 h-6 object-contain invert' /></button> */}
       </div>
